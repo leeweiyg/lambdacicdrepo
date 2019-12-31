@@ -3,8 +3,13 @@ phases:
   install:
     commands:
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket codepipeline-lambda-cicd --output-template-file outputSamTemplate.yaml
+    runtime-versions:
+        python: 3.6
 artifacts:
   type: zip
   files:
     - samTemplate.yaml
     - outputSamTemplate.yaml
+    
+    
+    
